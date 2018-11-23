@@ -1,0 +1,52 @@
+{
+  "name": "smartsheet-statsd-client",
+  "version": "0.1.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "lint": "prettier --write './src/**/*.ts' && tslint -t codeFrame './src/**/*.ts'",
+    "test": "jest --watchAll --coverage",
+    "start": "tsc -p tsconfig.build.json --watch",
+    "build": "rm -rf ./lib/* && tsc -p tsconfig.build.json"
+  },
+  "author": "graeme.cassels@smartsheet.com",
+  "devDependencies": {
+    "@types/jest": "^23.3.2",
+    "@types/node-statsd": "^0.1.2",
+    "jest": "^23.6.0",
+    "prettier": "^1.14.3",
+    "ts-jest": "^23.10.3",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.1.1"
+  },
+  "dependencies": {
+    "node-statsd": "^0.1.1"
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "coverageReporters": [
+      "text"
+    ]
+  }
+}
